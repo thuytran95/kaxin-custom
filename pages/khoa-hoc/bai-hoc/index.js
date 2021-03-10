@@ -126,16 +126,16 @@ class LearningPage extends Component {
                             <Fragment>
                                 <Loading loading={this.state.isChecking}/>
                                 {mediaStream && !_.isNull(mediaStream) ? (
-                                     <ReactHLS url={lessonDetail.mediaStream} width="100%" height="100%"/>
-                                    // <VideoReact
-                                    //     url={lessonDetail.mediaStream}
-                                    //     poster={lessonDetail.mediaThumbUri}
-                                    //     track={lessonDetail.mediaSubUri}
-                                    //     onFinishWatching={this.finishLesson}
-                                    //     onClickPrev={this.prevLesson}
-                                    //     onClickNext={this.nextLesson}
-                                    //     type="m3u8"
-                                    // />
+                                    //  <ReactHLS url={lessonDetail.mediaStream} width="100%" height="100%"/>
+                                    <VideoPlayer
+                                        url={lessonDetail.mediaStream}
+                                        poster={lessonDetail.mediaThumbUri}
+                                        track={lessonDetail.mediaSubUri}
+                                        onFinishWatching={this.finishLesson}
+                                        onClickPrev={this.prevLesson}
+                                        onClickNext={this.nextLesson}
+                                        type="m3u8"
+                                    />
                                 ) : mediaFile && !_.isNull(mediaFile) ? (
                                     <VideoPlayer
                                         url={lessonDetail.media}
