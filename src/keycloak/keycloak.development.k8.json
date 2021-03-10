@@ -1,0 +1,9 @@
+{
+    "realm": "MCB686",
+    "url": "https://ssok8.mentor.vn/auth",
+    "ssl-required": "none",
+    "resource": "website",
+    "public-client": true,
+    "confidential-port": 0,
+    "clientId": "website"
+}

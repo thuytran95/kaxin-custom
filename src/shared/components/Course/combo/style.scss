@@ -1,0 +1,58 @@
+@import 'scss/helpers/variables';
+.contentWrapper {
+    :global {
+        .row {
+            flex-direction: row !important;
+        }
+        .ant-pagination-jump-next, .ant-pagination-jump-prev, .ant-pagination-next, .ant-pagination-prev{
+            position: relative;
+        }
+        .ant-pagination-jump-next:after, .ant-pagination-jump-prev:after{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+}
+.courseItems {
+    &:nth-child(3n + 1) {
+        clear: both;
+    }
+}
+
+.sortWrapper {
+    margin-bottom: 15px;
+    @extend .clearfix;
+    span {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 5px 10px;
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: 1px solid $color-primary;
+        color: #031f31;
+        border-radius: 4px;
+        cursor: pointer;
+        max-width: 400px;
+        &:hover {
+            background-color: $color-primary;
+            color: $white;
+        }
+        i {
+            margin-right: 8px;
+            font-size: 24px;
+            vertical-align: top;
+            line-height: 26px;
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .courseItems {
+        max-width: 100%;
+        flex: 100%;
+    }
+}

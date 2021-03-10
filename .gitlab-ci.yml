@@ -1,0 +1,39 @@
+image: docker:stable
+services:
+    - docker:dind
+
+variables:
+    NAMESPACE: mcbook-beta
+    IMGTAG: beta
+
+    DEPLOY_FRONTEND: web-frontend
+
+before_script:
+    - docker login -u $CI_DEPLOY_USER -p $CI_DEPLOY_PASSWORD $CI_REGISTRY
+
+stages:
+    - build
+    - deploy
+
+fronend:
+    stage: build
+    cache:
+        key: frontend-cache
+        paths:
+            - frontend-cache
+    script:
+        - yarn install --cache-folder .frontend-cache
+        - yarn build-all
+        - export CONTAINER_NAME=$CI_REGISTRY_IMAGE
+        - docker pull $CONTAINER_NAME:$IMGTAG || true
+        - docker build --cache-from $CONTAINER_NAME:$IMGTAG -t $CONTAINER_NAME:$IMGTAG .
+        - docker push $CONTAINER_NAME:$IMGTAG > shafile
+        - tempID=`awk '/sha256/{print $3}' shafile`
+        - echo 'New frontend digest' $tempID
+        - kubectl set image deployment/$DEPLOY_FRONTEND -n $NAMESPACE $DEPLOY_FRONTEND=$CONTAINER_NAME@$tempID
+    only:
+        refs:
+            - deploy
+            - merge_requests
+    tags:
+        - qsoft

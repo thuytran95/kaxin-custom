@@ -1,0 +1,144 @@
+@import 'scss/helpers/variables';
+.contentWrapper {
+    :global {
+        .row {
+            flex-direction: row !important;
+        }
+        .itemCourse {
+            .imgCourse {
+                min-height: 250px;
+            }
+            &:hover {
+                .inner {
+                    position: static;
+                    box-shadow: 0 0 10px 0 #dadada;
+                    z-index: 100;
+                }
+                .price {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                .rating {
+                    transform: translateY(-8px);
+                }
+            }
+            .price,
+            .rating {
+                transition: all 0.25s ease-in-out;
+            }
+            .addToCart {
+                position: absolute;
+                bottom: 15px;
+                left: 12px;
+                right: 15px;
+            }
+        }
+    }
+}
+.courseItems {
+    &:nth-child(3n + 1) {
+        clear: both;
+    }
+}
+:global {
+    .ant-select {
+        width: 100%;
+        max-width: 200px;
+    }
+    .ant-select-selection {
+        height: auto;
+        padding: 5px 40px 5px 0;
+        font-size: 14px;
+    }
+    .ant-select-arrow {
+        color: inherit;
+        font-weight: normal;
+    }
+    .ant-select-dropdown {
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.9) !important;
+    }
+    .ant-pagination-jump-next, .ant-pagination-jump-prev, .ant-pagination-next, .ant-pagination-prev{
+        position: relative;
+    }
+    .ant-pagination-jump-next:after, .ant-pagination-jump-prev:after{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+    .ant-select-arrow .ant-select-arrow-icon svg{
+        display: inline-block !important;
+    }
+}
+.ordering {
+    margin: 0 0 25px;
+    select {
+        max-width: 165px;
+    }
+}
+
+.sortWrapper {
+    margin-bottom: 15px;
+    @extend .clearfix;
+    span {
+        display: block;
+        width: 48.5%;
+        float: right;
+        text-align: center;
+        padding: 5px 10px;
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
+        border: 1px solid $color-primary;
+        color: #031f31;
+        border-radius: 4px;
+        cursor: pointer;
+        &:hover {
+            background-color: $color-primary;
+            color: $white;
+        }
+        i {
+            margin-right: 8px;
+            font-size: 24px;
+            vertical-align: top;
+            line-height: 26px;
+        }
+        &:first-child {
+            float: left;
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .ordering {
+        display: none;
+        &.active {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 260px;
+            z-index: 1000;
+            background-color: $white;
+            font-size: 13px;
+            overflow: auto;
+            transition: all 0.35s ease-in-out;
+            padding: 20px;
+            transform: translate(-50%, -50%);
+            display: block;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+            :global{
+                .ant-select{
+                    max-width: 100%;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    .courseItems {
+        max-width: 100%;
+        flex: 100%;
+    }
+}

@@ -1,0 +1,70 @@
+.wrapDrop {
+    position: relative;
+    width: 200px;
+    margin: 0 auto 15px;
+}
+
+.uploadBox {
+    width: 100%;
+    height: 200px;
+    border: solid 2px #e7f2f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hasImage {
+    height: auto !important;
+    border: none !important;
+    img {
+        width: 100%;
+    }
+}
+
+.removeButton {
+    width: 100%;
+    border: none;
+    color: #fff;
+    background: #dc3545;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    cursor: pointer;
+}
+.uploadBoxCV {
+    display: inline-block;
+}
+.buttonText {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f19f4d;
+    color: #fff;
+    padding: 0 15px;
+    font-size: 12px;
+    line-height: 23px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.removeFile {
+    display: inline-block;
+    margin-left: 20px;
+    background-color: #dc3545;
+    color: #fff;
+    padding: 0 15px;
+    font-size: 14px;
+    line-height: 23px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.file {
+    font-size: 12px;
+}
+.cancleUpload {
+    color: #f00;
+    cursor: pointer
+}

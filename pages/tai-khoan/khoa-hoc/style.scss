@@ -1,0 +1,90 @@
+@import 'scss/helpers/variables';
+.headerTitlePage {
+    padding: 40px 0;
+    background-color: $color-primary;
+    color: $white;
+    h2 {
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: bold;
+        color: inherit
+    }
+    p {
+        opacity: 0.6;
+        margin: 0;
+    }
+}
+
+.contentWrapper {
+    border-bottom: 2px solid #f5f5f5;
+    :global {
+        .itemCourse {
+            .imgCourse {
+                overflow: hidden;
+                position: relative;
+                height: 250px;
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+            .infoCourse {
+                padding-bottom: 25px;
+                min-height: 100px;
+            }
+            .readmore {
+                overflow: hidden;
+                position: absolute;
+                bottom: 15px;
+                left: 12px;
+                right: 15px;
+                transform: translateY(30px);
+                visibility: hidden;
+                margin-top: 25px !important;
+                transition: all 0.25s linear;
+                a {
+                    display: block;
+                    border-color: $color-primary;
+                    background-color: $white;
+                    color: $color-primary;
+                    font-size: 14px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    width: 100%;
+                    outline: none !important;
+                    &:hover {
+                        background-color: $color-primary;
+                        color: $white;
+                    }
+                }
+            }
+            .readmore {
+                position: absolute;
+                bottom: 15px;
+                left: 12px;
+                right: 15px;
+            }
+            &:hover {
+                .inner {
+                    position: static;
+                    box-shadow: 0 0 10px 0 #dadada;
+                    z-index: 100;
+                }
+                .readmore {
+                    height: auto;
+                    transform: translateY(0);
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+.note {
+    a {
+        font-weight: 600;
+        color: $color-primary;
+        &:hover {
+            color: $color-four;
+            text-decoration: underline;
+        }
+    }
+}

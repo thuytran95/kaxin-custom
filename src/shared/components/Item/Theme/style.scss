@@ -1,0 +1,111 @@
+@import 'scss/helpers/variables';
+.itemTheme {
+    margin: 0 0 30px;
+    background-color: $white;
+    &:hover {
+        .imgTheme img {
+            transform: scale(1.08);
+        }
+        .infoTheme h4::before {
+            width: 40px;
+            opacity: 1;
+            background-color: $color-primary;
+        }
+    }
+}
+
+.imgTheme {
+    overflow: hidden;
+    height: 350px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: #f2f2f2;
+    display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    img {
+        width: 100%;
+    }
+    a {
+        display: block;
+        overflow: hidden;
+        text-indent: -999px;
+        height: 100%;
+        position: absolute;
+            width: 100%;
+    }
+}
+
+.infoTheme {
+    padding: 20px;
+    h4 {
+        font-size: 18px;
+        font-weight: 700;
+        color: $color-primary;
+        text-transform: uppercase;
+        min-height: 57px;
+        overflow: hidden;
+        display: block;
+        margin-bottom: 1.5rem;
+        position: relative;
+        padding-bottom: 15px; // display: flex;
+        // align-content: flex-end;
+        // align-items: flex-end;
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 20px;
+            height: 4px;
+            opacity: 0.68;
+            background-color: #c5cdd3;
+            transition: all 0.4s ease-in-out;
+        }
+        a{
+            color: inherit;
+            &:hover{
+                color: $color-primary;
+            }
+        }
+    }
+    p {
+        font-size: 14px;
+        font-weight: 700;
+        font-style: italic;
+        b {
+            font-weight: 700;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    :global {
+        .itemsTheme {
+            width: 50%;
+            float: left;
+            padding: 0 5px;
+        }
+    }
+    .itemTheme {
+        margin: 0 0 10px;
+    }
+    .imgTheme {
+        display: none;
+    }
+    .infoTheme {
+        padding: 10px;
+        h4 {
+            font-size: 14px;
+            line-height: 20px;
+            padding-bottom: 7px;
+        }
+        p {
+            font-size: 12px;
+            line-height: 16px;
+        }
+    }
+}

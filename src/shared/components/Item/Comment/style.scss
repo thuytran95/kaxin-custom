@@ -1,0 +1,106 @@
+@import 'scss/helpers/variables';
+.itemComment {
+    border-radius: 4px;
+    background-color: $white;
+    border: solid 1px #d9d9d9;
+    margin: 0 0 30px;
+    &:hover {
+        box-shadow: 0 0 10px 0 #dadada;
+        .imgComment img {
+            transform: scale(1.08);
+        }
+    }
+}
+
+.imgComment {
+    overflow: hidden;
+}
+
+.infoComment {
+    padding: 20px;
+    h4 {
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        max-height: 32px;
+        overflow: hidden;
+        display: block;
+        margin-bottom: 1.5rem;
+        color: inherit;
+        a {
+            color: inherit;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+    }
+    p {
+        font-size: 12px;
+        font-weight: 500;
+        font-style: italic;
+        color: $color-primary;
+    }
+    .price {
+        span {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 18px;
+            line-height: 24px;
+            font-weight: 700;
+            color: $color-primary;
+        }
+        .regularPrice {
+            font-size: 13px;
+            color: #9b9b9b;
+            text-decoration: line-through;
+            margin-left: 5px;
+        }
+    }
+}
+
+.countComment {
+    padding: 15px 20px;
+    background-color: #fbfbfb;
+    font-size: 12px;
+    font-weight: 500;
+    border-top: solid 1px #d9d9d9;
+    border-bottom: solid 1px #d9d9d9;
+    img {
+        margin-right: 10px;
+    }
+}
+
+.comment {
+    padding: 15px 20px;
+    background-color: #fbfbfb;
+    .inner {
+        position: relative;
+        padding-left: 40px;
+    }
+    .avatar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-size: 35px;
+        img {
+            max-width: 35px;
+        }
+    }
+    h5 {
+        font-size: 12px;
+        line-height: 14px;
+        font-weight: bold;
+        color: $color-primary;
+    }
+    em {
+        float: right;
+        font-size: 10px;
+        font-weight: 500;
+        font-style: italic;
+        color: #9b9b9b;
+    }
+    p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+}

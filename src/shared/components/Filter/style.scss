@@ -1,0 +1,116 @@
+@import 'scss/helpers/variables';
+.sidebarWrapper {
+    background-color: #f5f5f5;
+    border: solid 1px #d9d9d9;
+    :global {
+        ul.ant-tree {
+            li {
+                overflow: hidden;
+                span.ant-tree-checkbox {
+                    &.ant-tree-checkbox-checked,
+                    &.ant-tree-checkbox-indeterminate {
+                        span.ant-tree-checkbox-inner {
+                            background-color: $color-primary;
+                            border-color: $color-primary;
+                        }
+                    }
+                }
+            }
+        }
+        .ant-tree li span.ant-tree-switcher.ant-tree-switcher_open:after{
+            display: none;
+        }
+        .ant-tree li span.ant-tree-switcher .ant-select-switcher-icon svg,
+        .ant-tree li span.ant-tree-switcher .ant-tree-switcher-icon svg{
+            display: inline-block !important;
+        }
+    }
+}
+
+.widget {
+    position: relative;
+    padding: 20px;
+    border-bottom: 1px solid #d9d9d9;
+    &:first-child {
+        padding: 10px;
+    }
+    &:last-child {
+        border-bottom: 0;
+    }
+    h3 {
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0 0 15px;
+    }
+}
+
+.widgetRange {
+    .innerWidget {
+        position: relative;
+        padding: 20px 0;
+        :global {
+            .input-range {
+                height: 20px;
+                position: relative;
+            }
+            .input-range__label-container {
+                display: none;
+            }
+            .input-range__slider {
+                width: 16px;
+                height: 16px;
+                margin-top: -10px;
+                background: $white;
+                border: 1px solid $white;
+                box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.3);
+            }
+        }
+    }
+    .formRange {
+        margin-top: 20px;
+        @extend .clearfix;
+        input {
+            width: 48.5%;
+            float: right;
+            &:first-child {
+                float: left;
+                clear: both;
+            }
+        }
+        button {
+            margin-top: 15px;
+            clear: both;
+            background-color: $color-primary;
+            border-color: $color-primary;
+            font-weight: bold;
+            outline: none;
+            &:hover {
+                background-color: darken($color-primary, 15%);
+                border-color: darken($color-primary, 15%);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .sidebarWrapper {
+        display: none;
+        &.filterActive {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 20px;
+            width: 260px;
+            z-index: 1000;
+            background-color: $white;
+            font-size: 13px;
+            overflow: auto;
+            transition: all 0.35s ease-in-out;
+            display: block;
+            &::-webkit-scrollbar {
+                display: none;
+            }
+        }
+    }
+}

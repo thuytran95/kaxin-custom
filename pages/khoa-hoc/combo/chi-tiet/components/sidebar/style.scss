@@ -1,0 +1,131 @@
+@import 'scss/helpers/variables';
+
+.relatedPost{
+    :global{
+        .itemCourse {
+            margin: 0 0 20px !important;
+            &:last-child{
+                margin: 0;
+            }
+            &:hover{
+                .inner{
+                    position: static;
+                    box-shadow: 0 0 10px 0 #dadada;
+                    z-index: 100;
+                }
+                .price{
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                .rating{
+                    transform: translateY(-8px);
+                }
+            }
+            .price, .rating{
+                transition: all 0.25s ease-in-out;
+            }
+            .addToCart{
+                position: absolute;
+                bottom: 15px;
+                left: 12px;
+                right: 15px;
+            }
+        }
+    }
+}
+
+/* Author Infomation */
+.infoAuhor{
+    .info{
+        margin: 0 0 20px;
+        position: relative;
+        padding-left: 55px;
+        min-height: 40px;
+        strong{
+            font-size: 12px;
+            font-weight: bold;
+            font-style: normal;
+            color: #8191a0;
+        }
+        h5{
+            text-transform:uppercase;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    }
+    .theAvt {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-position: center;
+        background-size: contain;
+        position: absolute;
+        top: 2px;
+        left: 0;
+    }
+    .desc{
+        font-size: 14px;
+        line-height: 1.79;
+        a{
+            font-size: 13px;
+            color: $color-primary;
+            &:hover{
+                color: $color-four;
+            }
+        }
+    }
+}
+
+/* Meta Box */
+.boxMeta{
+    border-radius: 4px;
+    background-color: $white;
+    border: solid 1px $border-color;
+    margin: 0 0 20px;
+    .frame{
+        padding: 20px;
+        text-align: center;
+        img, iframe{
+            width: 100%;
+        }
+    }
+    ul{
+        margin:0;
+        padding: 20px;
+        background-color: #f5f5f5;
+        li{
+            list-style: none;
+            font-size: 13px;
+            line-height: 18px;
+            margin-bottom: 15px;
+            @extend .clearfix;
+            &:last-child{
+                margin: 0;
+            }
+            strong, span{
+                display: block;
+                float: left;
+            }
+            strong{
+                width: 40%;
+                font-weight: 700;
+            }
+            span{
+                width: 60%;
+                padding-left: 10px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:480px) {
+    .relatedPost{
+        :global{
+            .itemsPost{
+                max-width: 100%;
+                flex: 100%;
+                margin: 0 0 15px;
+            }
+        }
+    }
+}

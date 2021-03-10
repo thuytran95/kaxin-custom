@@ -1,0 +1,64 @@
+@import 'scss/helpers/variables';
+.headerTitlePage {
+    padding: 30px 0;
+    background-color: $color-primary;
+    color: $white;
+    h1 {
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: bold;
+        color: inherit
+    }
+    p {
+        opacity: 0.6;
+        margin: 0;
+    }
+}
+
+.navigationWrapper {
+    ul {
+        border-radius: 4px;
+        background-color: #e7f2f9;
+        border: solid 1px #d4e6f2;
+        margin: 0 0 20px;
+        padding: 5px 0;
+        li {
+            list-style: none;
+            display: block;
+            padding: 5px 0;
+            a {
+                position: relative;
+                display: block;
+                padding: 0 15px;
+                font-size: 13px;
+                font-weight: 500;
+                line-height: 40px;
+                color: $color-primary;
+                &:after {
+                    content: '\f2fb';
+                    font-family: $material-font;
+                    display: block;
+                    position: absolute;
+                    top: 0;
+                    right: 15px;
+                    line-height: 40px;
+                }
+                &:hover,
+                &[data-selected='true'] {
+                    background-color: $color-primary;
+                    color: $white;
+                }
+            }
+        }
+    }
+    .hasHeader {
+        li:first-child {
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: bold;
+            color: #031f31;
+            text-transform: uppercase;
+            padding: 15px 15px 5px;
+        }
+    }
+}

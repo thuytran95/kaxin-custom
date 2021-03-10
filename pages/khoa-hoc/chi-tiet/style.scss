@@ -1,0 +1,112 @@
+@import 'scss/helpers/variables';
+.singlePage{
+    :global{
+        .sticky{
+            z-index: 1000;
+        }
+    }
+}
+.boxSingle {
+    padding: 20px;
+    border-radius: 4px;
+    background-color: $white;
+    border: solid 1px $border-color;
+    margin: 0 0 20px;
+}
+
+.titleBox {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-bottom: solid 1px #d8d8d8;
+    padding: 0 0 15px;
+    margin: 0 0 10px;
+}
+
+.singlePage {
+     :global {
+        .widget {
+            padding: 20px;
+            border-radius: 4px;
+            background-color: $white;
+            border: solid 1px $border-color;
+            margin: 0 0 20px;
+        }
+        .widgetTitle {
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 0 0 15px;
+        }
+        .entryContent {
+            font-size: 14px;
+            line-height: 28px;
+            ul li, p {
+                margin: 0 0 20px;
+            }
+        }
+    }
+}
+@media screen and (max-width:600px) {
+    .singlePage{
+        :global{
+            .site-content,
+            .widget-area{
+                padding:0;
+            }
+            .widget{
+                border-left: 0;
+                border-right: 0;
+                border-radius: 0;
+            }
+        }
+    }
+    .boxSingle{
+        padding: 15px;
+        border-left: 0;
+        border-right: 0;
+        border-radius: 0;
+    }
+}
+.noteText{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    margin: 0;
+    padding: 20px 0;
+    text-align: center;
+    span{
+        display: block;
+        font-size: 250px;
+        line-height: 250px;
+        margin: 0 0 20px;
+        font-weight: 700;
+        color: #ccc;
+    }
+}
+@media screen and (max-width:800px) {
+    .noteText{
+        span{
+            font-size: 180px;
+            line-height: 200px;
+        }
+    }
+}
+@media screen and (max-width:600px) {
+    .noteText{
+        span{
+            font-size: 80px;
+            line-height: 82px;
+        }
+    }
+}
+@media screen and (max-width:320px) {
+    .noteText{
+        span{
+            font-size: 60px;
+            line-height: 62px;
+        }
+    }
+}

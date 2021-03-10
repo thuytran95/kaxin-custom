@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  frontend:
+    container_name: frontend
+    build: registry.gitlab.com/qsoftvietnam/mcb686-web/frontend:latest
+    ports:
+      - '3002:3002'
+    environment:
+      - PORT=3002

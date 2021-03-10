@@ -1,0 +1,53 @@
+@import 'scss/helpers/variables';
+
+.pageWrapper{
+    :global{
+        .title{
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 40px;
+        }
+        .box-content{
+            margin-top: 30px;
+            h3{
+                font-weight: 700;
+                margin-bottom: 20px;
+
+            }
+            ul{
+                margin: 0;
+                padding: 0;
+                li{
+                    list-style: none;
+                    margin-bottom: 10px;
+                    letter-spacing: 1px;
+                    b{
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+        .errorpage{
+            .title{
+                margin-bottom: 20px;
+            }
+            a{
+                width: 100%;
+                max-width: 200px;
+                margin-left: 10px;
+                padding: 0 15px !important;
+                text-transform: uppercase;
+                font-weight: 700;
+                font-size: 12px !important;
+                line-height: 38px !important;
+                border-color: #0071bb !important;
+                background-color: transparent !important;
+                color: #0071bb !important;
+                &:hover{
+                    background-color: #0071bb !important;
+                    color: #fff !important;
+                }
+            }
+        }
+    }
+}

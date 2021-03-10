@@ -1,0 +1,57 @@
+@import 'scss/helpers/variables';
+
+$navbar-color: rgba(3, 31, 49, 0.9);
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: $navbar-color;
+    padding: 15px 20px;
+    color: $white;
+    a {
+        color: inherit;
+    }
+    .backButton {
+        padding: 5px 15px;
+        font-weight: bold;
+        border-color: transparent !important;
+        background-color: transparent !important;
+        color: $white;
+        font-size: 14px;
+        font-weight: 400;
+        i {
+            &::before,
+            &:after {
+                display: none;
+            }
+            svg {
+                display: inline-block !important;
+            }
+        }
+    }
+    .errorButton {
+        padding: 5px 15px;
+        font-weight: bold;
+        font-size: 12px;
+        border-color: $white;
+        color: $white;
+        &:hover,
+        &:active {
+            background-color: $white !important;
+            color: $navbar-color !important;
+        }
+    }
+}
+.navControls {
+    color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        :global {
+            .btn {
+                white-space: normal;
+            }
+        }
+    }
+}

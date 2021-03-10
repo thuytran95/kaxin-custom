@@ -1,0 +1,9 @@
+{
+    "realm": "MCBOOK",
+    "url": " https://sso.mentor.vn/auth",
+    "ssl-required": "none",
+    "resource": "website",
+    "public-client": true,
+    "confidential-port": 0,
+    "clientId": "website"
+}

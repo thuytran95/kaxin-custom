@@ -1,0 +1,15 @@
+// Variables
+@import 'helpers/variables';
+@import 'helpers/colors';
+@import 'helpers/media-queries';
+body {
+    overflow-x: hidden;
+}
+
+:global {
+    .ant-tabs,
+    .ant-steps {
+        font-family: 'Montserrat', sans-serif;
+    }
+    @import 'components/pdf-viewer/style';
+}

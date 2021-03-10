@@ -1,0 +1,12 @@
+@import 'scss/helpers/variables';
+
+.wrapper {
+    :global {
+        .addToCart .btn{ 
+            &.disabled, &.disabled:hover {
+                background-color: $gray;
+                border-color: $gray;
+            }
+        }
+    }
+}

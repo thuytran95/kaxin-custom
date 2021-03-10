@@ -1,0 +1,650 @@
+@import 'scss/helpers/variables';
+.floatRight {
+    float: right !important;
+}
+
+.floatLeft {
+    float: left !important;
+}
+
+.innerBox {
+    background-color: $white;
+    margin-bottom: 20px;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    padding: 20px;
+    h3 {
+        font-size: 18px;
+        line-height: 32px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0 0 15px;
+        @extend .clearfix;
+        button {
+            float: right;
+        }
+    }
+    h4 {
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0 0 15px;
+    }
+}
+
+.formCoupon {
+    @extend .clearfix;
+    button {
+        float: right;
+        width: 100%;
+        max-width: 110px;
+        background-color: $white;
+        border-color: $color-primary;
+        color: $color-primary;
+        font-weight: bold;
+        text-transform: uppercase;
+        &:hover {
+            background-color: darken($color-primary, 15%);
+            border-color: darken($color-primary, 15%);
+            color: $white;
+        }
+    }
+    input {
+        float: left;
+        width: calc(100% - 120px);
+    }
+    .idCoupon {
+        color: $color-text;
+        font-size: 13px;
+        font-weight: 700;
+    }
+}
+
+.cartInfo {
+    .btnEdit,
+    .btnClose {
+        font-weight: bold;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        min-width: 92px;
+        &:hover {
+            background-color: darken($color-primary, 15%);
+            border-color: darken($color-primary, 15%);
+            color: $white;
+        }
+    }
+    .btnEdit {
+        background-color: $white;
+        border-color: $color-primary;
+        color: $color-primary;
+        margin-left: 8px;
+    }
+    :global {
+        .price {
+            span {
+                display: block;
+                font-size: 18px;
+                line-height: 20px;
+                font-weight: 700;
+                color: $color-primary;
+            }
+            .regularPrice {
+                font-size: 13px;
+                color: #9b9b9b;
+                text-decoration: line-through;
+            }
+        }
+    }
+    table {
+        margin: 0;
+        tr {
+            border-bottom: 1px solid $border-color;
+        }
+        td {
+            padding: 10px;
+            border: 0;
+        }
+        .thumbnail {
+            padding-left: 0;
+            img,
+            span {
+                display: block;
+                width: 140px;
+                height: 105px;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+        .name {
+            h4 {
+                font-size: 13px;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            p {
+                font-size: 12px;
+                font-style: italic;
+                margin: 0 0 10px;
+                color: $color-primary;
+            }
+            span {
+                font-size: 12px;
+                b {
+                    color: $color-primary;
+                }
+            }
+        }
+        .price {
+            text-align: right;
+        }
+        .btnDel {
+            display: block;
+            margin-top: 30px;
+            font-size: 12px;
+            font-weight: 500;
+            font-style: italic;
+            color: #ff001f;
+            cursor: pointer;
+        }
+        .totalCart {
+            border: 0;
+            font-weight: bold;
+            text-transform: uppercase;
+            td {
+                padding: 20px 0 10px;
+            }
+            .price {
+                font-size: 24px;
+                font-weight: bold;
+                color: $color-primary;
+            }
+        }
+    }
+}
+
+/* Left Column */
+
+.titleBox {
+    margin: 0 0 35px;
+}
+
+.checkoutForm {
+    :global {
+        .btn {
+            background-color: $color-primary;
+            border-color: $color-primary;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: $white;
+            &:hover {
+                background-color: $color-four;
+                border-color: $color-four;
+            }
+        }
+    }
+    section {
+        padding: 20px 0;
+        border-top: 1px solid $border-color;
+        @extend .clearfix;
+    }
+    h4 {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0 0 15px;
+    }
+    form {
+        @extend .clearfix;
+        :global {
+            .form-group {
+                width: 48.5%;
+                float: right;
+                &:nth-child(2n + 1) {
+                    float: left;
+                    clear: both;
+                }
+            }
+            .form-check {
+                margin-top: 20px;
+                padding-left: 2rem;
+            }
+            .form-check-label {
+                input {
+                    margin-left: -2rem;
+                }
+            }
+        }
+        label {
+            color: $color-text;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        input,
+        select {
+            height: 36px !important;
+        }
+        .fullInput {
+            width: 100% !important;
+        }
+    }
+}
+
+.checkoutMethod {
+    :global {
+        .ant-radio-group {
+            display: block;
+            width: 100%;
+        }
+        .ant-radio-wrapper {
+            display: block;
+            width: 100%;
+            margin: 0 0 10px;
+            border: 1px solid $border-color;
+            border-radius: 4px;
+            position: relative;
+            padding: 15px;
+            padding-left: 50px;
+            white-space: normal;
+            span:last-child {
+                display: block;
+                position: relative;
+            }
+        }
+        .ant-radio {
+            position: absolute;
+            top: 35px;
+            left: 15px;
+        }
+        .table td,
+        .table th {
+            border-top: 0;
+        }
+        .table th {
+            padding-left: 0;
+            color: $color-text;
+            text-transform: uppercase;
+        }
+    }
+    .inner {
+        @extend .clearfix;
+    }
+    .icMethod {
+        float: left;
+        width: 48px;
+    }
+    .text {
+        float: left;
+        width: calc(100% - 48px);
+        padding-top: 10px;
+        padding-left: 30px;
+        font-size: 13px;
+        h4 {
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        h5 {
+            font-size: 13px;
+            line-height: 18px;
+            font-weight: normal;
+            color: $color-text;
+        }
+        h6 {
+            font-size: 13px;
+            line-height: 18px;
+            font-weight: bold;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            li {
+                list-style: none;
+                font-style: italic;
+                padding-left: 10px;
+                &::before {
+                    content: '\f26d';
+                    font-family: $material-font;
+                    font-style: normal;
+                    font-size: 4px;
+                    vertical-align: middle;
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+                b,
+                strong {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+}
+
+.guide {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    ul {
+        li {
+            font-style: normal !important;
+        }
+    }
+}
+
+.confirmBox {
+    section {
+        padding: 20px 0;
+        border-bottom: 1px solid $border-color;
+        @extend .clearfix;
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        li {
+            margin: 0 0 15px;
+            list-style: none;
+            @extend .clearfix;
+            span {
+                width: 60%;
+                float: left;
+            }
+            .name {
+                width: 40%;
+                color: $color-text;
+                font-weight: 600;
+            }
+        }
+    }
+    .inner {
+        @extend .clearfix;
+    }
+    .icMethod {
+        float: left;
+        width: 48px;
+    }
+    .text {
+        float: left;
+        width: calc(100% - 48px);
+        padding-left: 30px;
+        font-size: 13px;
+        h4 {
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0 0 10px;
+        }
+        p {
+            font-size: 13px;
+            line-height: 22px;
+            font-weight: normal;
+            color: $color-text;
+        }
+    }
+}
+
+.outBox {
+    h3 {
+        color: #ff001f;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1200px) {
+    .cartInfo {
+        :global {
+            .btnActionSmall {
+                display: none !important;
+            }
+        }
+    }
+    .checkoutMethod {
+        .text {
+            .toogleNote {
+                display: none;
+            }
+            :global {
+                .btn {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .checkoutMethod {
+        :global {
+            .ant-radio-wrapper {
+                padding-left: 40px;
+            }
+        }
+        .icMethod {
+            display: none;
+        }
+        .text {
+            width: 100%;
+            padding-left: 0;
+            .toogleNote {
+                margin-top: 8px;
+                font-size: 13px;
+                font-weight: bold;
+                color: $color-primary;
+                text-decoration: underline;
+                &:hover {
+                    color: $color-four;
+                }
+            }
+            section {
+                position: fixed;
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                z-index: 1000;
+                padding: 15px;
+                background-color: $white;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.35s ease-in-out;
+                overflow: auto;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+            }
+            .titleMobi {
+                font-size: 18px;
+                font-weight: bold;
+                text-transform: uppercase;
+                padding: 0 0 15px;
+                margin: 0 0 15px;
+                border-bottom: 1px solid $border-color;
+            }
+            :global {
+                section.active {
+                    opacity: 1;
+                    visibility: visible;
+                }
+                .btn {
+                    margin-top: 30px;
+                    background-color: $color-primary;
+                    border-color: $color-primary;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    outline: none;
+                    &:hover {
+                        background-color: darken($color-primary, 15%);
+                        border-color: darken($color-primary, 15%);
+                    }
+                }
+            }
+        }
+    }
+    .confirmBox {
+        section {
+            padding: 0;
+            border: 0;
+            h3 {
+                display: none;
+            }
+            &:first-child {
+                h3 {
+                    display: block;
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+            }
+        }
+        .icMethod {
+            display: none;
+        }
+        .text {
+            width: 100%;
+            padding: 0;
+        }
+    }
+    .innerBox {
+        padding: 15px;
+        h3 {
+            button {
+                display: block;
+                max-width: 300px;
+                margin-top: 10px;
+                float: none;
+            }
+        }
+        :global {
+            .activeCartInfo {
+                top: 0;
+                right: 0;
+                left: 0;
+                bottom: 0;
+                z-index: 1000;
+                padding: 15px;
+                background-color: $white;
+                overflow: auto;
+                &::-webkit-scrollbar {
+                    display: none;
+                }
+                h3 {
+                    button {
+                        display: none;
+                    }
+                }
+                .btn {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    &:hover {
+                        background-color: darken($color-primary, 15%);
+                        border-color: darken($color-primary, 15%);
+                    }
+                }
+                .btn-primary {
+                    margin-top: 30px;
+                    background-color: $color-primary;
+                    border-color: $color-primary;
+                    outline: none;
+                    color: $white;
+                    &:hover {
+                        background-color: darken($color-primary, 15%);
+                        border-color: darken($color-primary, 15%);
+                    }
+                }
+            }
+        }
+    }
+    .cartInfo {
+        :global {
+            .price {
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+        table,
+        table tr,
+        table td {
+            display: block;
+        }
+        table {
+            tr {
+                position: relative;
+                display: block;
+                padding: 10px 0;
+                padding-left: 160px;
+            }
+            td {
+                padding: 0;
+            }
+            .thumbnail {
+                position: absolute;
+                top: 15px;
+                left: 0;
+                width: 90px;
+                img {
+                    max-width: 100%;
+                }
+            }
+            .price {
+                text-align: left;
+                padding-top: 7px;
+            }
+            .btnDel {
+                margin-top: 8px;
+            }
+            .totalCart {
+                td {
+                    padding: 0;
+                }
+                .price {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .checkoutForm {
+        form {
+            :global {
+                .form-group {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .confirmBox {
+        ul {
+            margin-bottom: 30px;
+            li {
+                font-size: 13px;
+                line-height: 18px;
+                span {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .checkoutMethod {
+        .text {
+            :global {
+                .btn {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .formCoupon {
+        input {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button {
+            float: none;
+        }
+    }
+}

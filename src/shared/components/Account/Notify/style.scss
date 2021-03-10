@@ -1,0 +1,82 @@
+@import 'scss/helpers/variables';
+.titlePageHeader {
+    padding: 0 0 20px;
+    margin: 0 0 20px;
+    border-bottom: 1px solid #d8d8d8;
+    @extend .clearfix;
+    h3 {
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        float: left;
+        margin: 0;
+        padding: 0;
+        line-height: 26px;
+    }
+    i {
+        font-size: 13px;
+        font-style: normal;
+        float: right;
+        cursor: pointer;
+        &:hover {
+            color: #0071bb;
+        }
+    }
+}
+.itemWrapper {
+    display: flex;
+    padding: 15px 10px;
+    border-bottom: 1px solid rgba(#d9d9d9, 0.5);
+    align-items: center;
+    cursor: pointer;
+    &.active {
+        background-color: #f4f2f2;
+    }
+
+    &:hover {
+        background-color: #d9d9d9;
+    }
+    .theAvt {
+        display: block;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 2px solid #fff;
+        -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+            0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+            0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+        float: left;
+    }
+
+    .message {
+        float: left;
+        width: calc(100% - 45px);
+        padding-left: 20px;
+        span {
+            display: block;
+            font-size: 13px;
+            line-height: 16px;
+        }
+        :global {
+            .title {
+                margin-bottom: 5px;
+                word-break: break-word;
+                font-weight: 600;
+                text-transform: capitalize
+            }
+            .content {
+                margin-bottom: 5px;
+                word-break: break-word;
+            }
+            .date {
+                color: #8191a0;
+                font-size: 12px;
+                font-weight: 500;
+            }
+        }
+    }
+}

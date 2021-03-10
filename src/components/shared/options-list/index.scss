@@ -1,0 +1,93 @@
+@import 'styles/colors';
+
+.option {
+    position: relative;
+    margin-bottom: 30px;
+
+    &.tight {
+        margin-bottom: 15px;
+    }
+}
+
+.disabled {
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.option > .group {
+    margin-top: 20px;
+}
+
+.sideOverrides {
+    display: inline-block;
+    vertical-align: top;
+    padding: 8px 0;
+}
+
+.maxSize {
+    display: inline-block;
+    vertical-align: top;
+    max-width: calc(100% - 40px);
+}
+
+.label {
+    text-transform: none;
+    font-size: 13px;
+    color: $chromeTextColor;
+    line-height: 16px;
+    margin-bottom: 8px;
+    padding: 0 3px;
+    font-weight: 700;
+    &.white {
+        color: #000;
+    }
+
+    :global {
+        i,
+        span {
+            display: inline-block;
+            vertical-align: top;
+            line-height: 16px;
+        }
+        i {
+            margin-right: 7px;
+            font-size: 12px;
+        }
+    }
+}
+
+.tooltip {
+    text-transform: none;
+    margin-left: 4px;
+    display: inline-block;
+}
+
+.columns {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+.column {
+    display: table-cell;
+    vertical-align: top;
+
+    &:first-child {
+        padding-right: 10px;
+    }
+
+    &:last-child {
+        padding-left: 10px;
+    }
+}
+
+.section {
+    margin: 20px 0;
+}
+.heading{
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    line-height: 22px;
+    font-weight: 700;
+}

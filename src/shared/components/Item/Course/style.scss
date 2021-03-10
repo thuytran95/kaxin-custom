@@ -1,0 +1,22 @@
+@import 'scss/helpers/variables';
+.itemCourse {
+    :global {
+        .imgCourse {
+            height: auto;
+            max-height: none;
+        }
+        .infoCourse {
+            min-height: 1px;
+            h4 {
+                height: auto;
+            }
+        }
+        .addToCart .btn {
+            &.disabled,
+            &.disabled:hover {
+                background-color: $gray;
+                border-color: $gray;
+            }
+        }
+    }
+}

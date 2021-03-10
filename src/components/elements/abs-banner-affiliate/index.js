@@ -1,0 +1,46 @@
+import React, { PureComponent } from 'react';
+import PropTypes from 'prop-types';
+import _ from 'lodash';
+import settings from './settings';
+import propsSchema from './props-schema';
+
+import requireSize from 'components/elements/require-size';
+
+const requireContext = require.context('./size', true, /^\.\/[a-z-]+?\/index\.(js|jsx)$/);
+const size = requireSize(requireContext);
+
+class AdsBannerAffiliateElement extends PureComponent {
+    static defaultProps = {
+        idSection: 'adsBannerAffiliate',
+        layout: 'full_width',
+        heading1: 'Tham gia affiliate cùng <b>Kaixin.vn</b>',
+        heading2: 'PHÂN PHỐI KHOÁ HỌC',
+        heading3: 'Thu nhập khủng dành cho các Affiliator tài năng!'
+    };
+    static propsSchema = propsSchema;
+
+    static settings = settings;
+
+    render() {
+        const { Element, builder, layout, ...rest } = this.props;
+        const props = {
+            htmlTag: 'div',
+            ...builder,
+            settings
+        };
+        const Layout = _.get(size, _.replace(layout, '-', '_'), 'div');
+        return (
+            <Element {...props}>
+                <Layout {...rest} />
+            </Element>
+        );
+    }
+}
+
+AdsBannerAffiliateElement.propTypes = {
+    Element: PropTypes.func.isRequired,
+    builder: PropTypes.object,
+    layout: PropTypes.oneOf(['full_width', 'half_width', 'minimun_width'])
+};
+
+export default AdsBannerAffiliateElement;

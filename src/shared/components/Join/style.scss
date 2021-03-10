@@ -1,0 +1,116 @@
+@import 'scss/helpers/variables';
+.joinWrapper {
+    background-image: radial-gradient(circle at 42% 66%, #1196ed, #0071bb);
+    overflow: hidden;
+    position: relative;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        top: 0;
+        left: 46%;
+        width: 110%;
+        height: 1000px;
+        background-image: linear-gradient(to bottom, #f4bd3f, #f7a61c);
+        transform: rotate(10deg);
+        z-index: 100;
+    }
+}
+
+:global {
+    .leftColumn,
+    .rightColumn {
+        position: relative;
+        padding-top: 30px;
+        padding-bottom: 100px;
+    }
+    .leftColumn {
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 90%;
+            background-image: url('/static/assets/images/join-us.png');
+            background-position: right bottom;
+            background-repeat: no-repeat;
+            background-size: contain;
+            z-index: 10;
+        }
+    }
+}
+
+.hideText {
+    font-size: 140px;
+    font-weight: 900;
+    line-height: 0.82;
+    color: $white;
+    opacity: 0.2;
+    text-transform: uppercase;
+}
+
+.boxText {
+    position: relative;
+    z-index: 999;
+    text-align: right;
+    h2 {
+        font-size: 72px;
+        font-weight: 900;
+        line-height: 80px;
+        margin: 0 0 25px;
+        text-transform: uppercase;
+        color: $color-primary;
+        b {
+            display: block;
+            font-size: 39px;
+            line-height: 50px;
+            color: $color-default;
+        }
+    }
+    p {
+        margin: 0 0 25px;
+        line-height: 1.79;
+    }
+}
+
+.btnJoin {
+    background-color: $color-primary;
+    border-color: $color-primary;
+    color: $color-secondary;
+    &:hover {
+        background-color: $color-secondary;
+        border-color: $color-secondary;
+        color: $color-primary;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .joinWrapper {
+        padding: 40px;
+        background-image: linear-gradient(to bottom, #f4bd3f, #f7a61c);
+        &:after {
+            display: none;
+        }
+        :global {
+            .leftColumn {
+                display: none;
+            }
+            .rightColumn{
+                padding: 0;
+            }
+        }
+    }
+    .boxText{
+        text-align: center;
+        h2{
+            font-size: 30px;
+            line-height: 40px;
+            b{
+                display: block;
+                font-size: 18px;
+                line-height: 26px;
+            }
+        }
+    }
+}

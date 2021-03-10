@@ -1,0 +1,77 @@
+@import 'scss/helpers/variables';
+.contentInner {
+    section {
+        margin: 0 0 20px;
+        padding: 20px;
+        border-radius: 4px;
+        border: solid 1px #d9d9d9;
+    }
+    h3 {
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 0 0 20px;
+        margin: 0 0 20px;
+        border-bottom: 1px solid #d8d8d8;
+    }
+    table {
+        th,
+        td {
+            border: 0;
+            font-size: 13px;
+        }
+        th {
+            font-size: 12px;
+            font-weight: bold;
+            color: #9b9b9b;
+        }
+        b {
+            cursor: pointer;
+            color: $color-primary;
+        }
+        span {
+            &.label1 {
+                color: #4a90e2;
+            }
+            &.label2 {
+                color: #50e3c2;
+            }
+            &.label3 {
+                color: #7ed321;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contentInner {
+        margin-bottom: 20px;
+        table {
+            thead{
+                display: none;
+            }
+            tr:nth-child(2n+2){
+                background-color: #e5e5e5;
+                td{
+                    padding: 10px 15px;
+                }
+            }
+            td {
+                width: 100% !important;
+                display: block !important;
+                text-align: right!important;
+                padding: 10px 0;
+                border-bottom: 1px solid #d9d9d9;
+                float: left;
+                &:last-child{
+                    border-bottom: 0;
+                }
+                &::before{
+                    content: attr(data-title) ": ";
+                    font-weight: 700;
+                    float: left;
+                }
+            }
+        }
+    }
+}

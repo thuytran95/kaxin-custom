@@ -1,0 +1,177 @@
+@import 'scss/helpers/variables';
+:global {
+    .sticky {
+        z-index: 1000;
+        .pageHeaderStyle {
+            padding: 10px 0 0;
+            h2 {
+                font-size: 18px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                color: inherit;
+            }
+            .rating {
+                margin: 0 0 5px;
+            }
+            ul {
+                li {
+                    padding-bottom: 5px;
+                }
+            }
+        }
+        .price {
+            margin-bottom: 5px;
+            span {
+                line-height: 26px;
+            }
+        }
+    }
+}
+.pageHeaderStyle {
+    padding: 30px 0 0;
+    background-color: $color-primary;
+    color: $white;
+    h2 {
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: bold;
+        color: inherit;
+    }
+    :global {
+        .rating {
+            margin: 0 0 20px;
+        }
+    }
+    ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+        li {
+            list-style: none;
+            display: inline-block;
+            margin-right: 40px;
+            border: 0 !important;
+            position: relative;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            padding: 0;
+            a {
+                display: block;
+                padding: 0 0 15px;
+                color: inherit;
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 4px;
+                    background-color: transparent;
+                }
+                &:hover {
+                    color: $color-secondary;
+                }
+            }
+
+        }
+        :global {
+            li {
+               a.active {
+                    color: $color-secondary;
+                    &:after {
+                        background-color: $color-secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+.summary {
+    text-align: right;
+    a[disabled],
+    a[disabled]:hover {
+        background-color: $gray !important;
+        border-color: $gray !important;
+    }
+}
+.price {
+    margin: 0 0 20px;
+    span {
+        display: inline-block;
+        vertical-align: bottom;
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: 700;
+    }
+    .regularPrice {
+        font-size: 13px;
+        line-height: 25px;
+        color: #61aee1;
+        text-decoration: line-through;
+        margin-left: 10px;
+    }
+}
+
+.btnActions {
+    @extend .clearfix;
+    :global {
+        .btn {
+            float: right;
+            background-color: $color-four;
+            border-color: $color-four;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-left: 5px;
+            &:hover {
+                background-color: darken($color-four, 10%);
+                border-color: darken($color-four, 10%);
+            }
+        }
+    }
+    .buyNow {
+        background-color: $white;
+        border-color: $white;
+        color: $color-primary;
+        &:hover {
+            background-color: darken($color-primary, 10%);
+            border-color: darken($color-primary, 10%);
+            color: $white;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .btnActions {
+        :global {
+            .btn {
+                width: 100%;
+                margin: 0 0 10px !important;
+            }
+        }
+    }
+    :global {
+        .sticky {
+            position: static !important;
+        }
+    }
+}
+@media screen and (max-width: 992px) {
+    .pageHeader {
+        h2 {
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 10px;
+        }
+        ul {
+            display: none;
+        }
+    }
+    .summary {
+        text-align: left;
+    }
+    .btnActions {
+        max-width: 300px;
+    }
+}

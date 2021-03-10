@@ -1,0 +1,65 @@
+$breakpoints: (
+    'small': 767px,
+    'medium': 992px,
+    'large': 1200px
+) !default;
+
+@mixin response-to($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+        // Prints a media query based on the value
+        @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+        @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+          + 'Available breakpoints are: #{map-keys($breakpoints)}.';
+    }
+}
+
+@mixin response-from($breakpoint) {
+    // If the key exists in the map
+    @if map-has-key($breakpoints, $breakpoint) {
+        // Prints a media query based on the value
+        @media screen and (max-width: map-get($breakpoints, $breakpoint)) {
+            @content;
+        }
+    }
+
+    // If the key doesn't exist in the map
+    @else {
+        @warn 'Unfortunately, no value could be retrieved from `#{$breakpoint}`. '
+          + 'Available breakpoints are: #{map-keys($breakpoints)}.';
+    }
+}
+
+@mixin breakpoint($point) {
+    @if $point == sm-max {
+        @media (max-width: 460px) {
+            @content;
+        }
+    } @else if $point == md-max {
+        @media (max-width: 800px) {
+            @content;
+        }
+    } @else if $point == lg-max {
+        @media (max-width: 1024px) {
+            @content;
+        }
+    } @else if $point == sm-min {
+        @media (min-width: 320px) {
+            @content;
+        }
+    } @else if $point == md-min {
+        @media (min-width: 768px) {
+            @content;
+        }
+    } @else if $point == lg-min {
+        @media (min-width: 960px) {
+            @content;
+        }
+    }
+}

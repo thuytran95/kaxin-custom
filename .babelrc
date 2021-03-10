@@ -1,0 +1,76 @@
+{
+    "presets": ["next/babel"],
+    "plugins": [
+        [
+            "@babel/plugin-proposal-decorators",
+            {
+              "legacy": true
+            }
+        ],
+        [
+            "babel-plugin-styled-components",
+            {
+                "ssr": true,
+                "displayName": false,
+                "fileName": false
+            }
+        ],
+        [
+            "import",
+            {
+                "libraryName": "antd",
+                "style": false
+            }
+        ],
+        [
+            "module-resolver",
+            {
+                "root": ["./"],
+                "alias": {
+                    "src": "./src",
+                    "components": "./src/components",
+                    "helpers": "./src/helpers",
+                    "statics": "./src/statics",
+                    "redux-utils": "./src/redux-utils"
+                }
+            }
+        ]
+    ],
+    "comments": false,
+    "sourceMaps": false,
+    "env": {
+        "development": {
+            "sourceMaps": true,
+            "plugins": ["react-intl"]
+        },
+        "production": {
+            "plugins": [
+                "transform-remove-console",
+                [
+                    "babel-plugin-styled-components",
+                    {
+                        "ssr": true,
+                        "displayName": false,
+                        "fileName": false
+                    }
+                ],
+                [
+                    "react-intl",
+                    {
+                        "messagesDir": "lang/.messages/"
+                    }
+                ],
+                [
+                    "transform-react-remove-prop-types",
+                    {
+                        "mode": "remove",
+                        "removeImport": true,
+                        "ignoreFilenames": ["node_modules"]
+                    }
+                ]
+            ]
+        }
+    }
+}
+
+

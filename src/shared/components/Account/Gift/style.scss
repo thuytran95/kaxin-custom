@@ -1,0 +1,256 @@
+@import 'scss/helpers/variables';
+.contentInner {
+    :global {
+        .nav-tabs {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+        .nav-tabs .nav-item {
+            margin: 0;
+            margin-right: 30px;
+        }
+        .nav-tabs .nav-link {
+            font-size: 14px;
+        }
+    }
+    section {
+        margin: 0 0 20px;
+        padding: 20px;
+        border-radius: 4px;
+        border: solid 1px #d9d9d9;
+    }
+    h3 {
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 0 0 20px;
+        margin: 0 0 20px;
+        border-bottom: 1px solid #d8d8d8;
+    }
+    form {
+        @extend .clearfix;
+        label,
+        input,
+        button {
+            outline: none !important;
+        }
+        label {
+            font-size: 13px;
+            font-weight: bold;
+            color: #8191a0;
+        }
+        input {
+            float: left;
+            width: calc(100% - 120px);
+        }
+        button {
+            float: right;
+            margin-left: 10px;
+            background-color: $color-primary;
+            border-color: $color-primary;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            &:hover {
+                background-color: darken($color-primary, 15%);
+                border-color: darken($color-primary, 15%);
+            }
+        }
+    }
+    table {
+        th,
+        td {
+            border: 0;
+            font-size: 13px;
+        }
+        th {
+            font-size: 12px;
+            font-weight: bold;
+            color: #9b9b9b;
+        }
+        .code {
+            width: 350px;
+        }
+        button {
+            float: right;
+            background-color: transparent;
+            border-color: $color-primary;
+            color: $color-primary;
+            font-size: 13px;
+            font-weight: bold;
+            &:hover {
+                background-color: darken($color-primary, 15%);
+                border-color: darken($color-primary, 15%);
+                color: $white;
+            }
+        }
+    }
+}
+
+.tableWrapper {
+    :global {
+        .noGift {
+            padding: 40px 0;
+            h4 {
+                font-size: 13px;
+                font-weight: bold;
+                text-align: center;
+                color: #031f31;
+                text-transform: uppercase;
+            }
+            img {
+                display: block;
+                margin: 20px auto 0;
+                max-width: 90px;
+            }
+        }
+        .ant-collapse {
+            background-color: transparent;
+            border: 0;
+            border-radius: 0;
+            font-size: 13px;
+            line-height: 20px;
+        }
+        .ant-collapse-item{
+            margin-bottom: 15px;
+            background-color: #e7f2f9;
+            border: solid 1px #d4e6f2;
+        }
+        .ant-collapse>.ant-collapse-item>.ant-collapse-header{
+            padding: 10px 15px;
+            border-radius: 4px;
+        }
+        .ant-collapse>.ant-collapse-item>.ant-collapse-header .anticon{
+            display: none
+        }
+        .ant-collapse-item-active{
+            ul{
+                li{
+                    &.actions span:after{
+                        content: '\f2f8'
+                    }
+                }
+            }
+        }
+        .ant-collapse-content {
+            background-color: transparent;
+            border-top: 1px solid #d4e6f2;
+        }
+        .ant-collapse-content>.ant-collapse-content-box{
+            padding: 0;
+        }
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        @extend .clearfix;
+        li {
+            display: block;
+            float: left;
+            padding: 10px;
+            i{
+                display: block;
+                margin-bottom: 5px;
+                font-style: normal;
+                color: #9b9b9b;
+                font-weight: 700
+            }
+        }
+        :global {
+            .chanel {
+                width: 50%;
+                b{
+                    color: $color-primary;
+                    text-transform: uppercase;
+                }
+            }
+            .number {
+                width: 20%;
+                text-align: center;
+            }
+            .code {
+                width: 20%;
+                text-align: right;
+            }
+            .actions {
+                width: 10%;
+                text-align: right;
+                span {
+                    cursor: pointer;
+                    width: 30px;
+                    height: 30px;
+                    line-height: 30px;
+                    overflow: hidden;
+                    text-align: center;
+                    text-indent: -9999px;
+                    display: block;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    margin-top: 10px;
+                    float: right;
+                    position: relative;
+                    &:after{
+                        content: '\f2f2';
+                        font-family: $material-font;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        text-indent: 0;
+                        font-size: 26px;
+                    }
+                    &:hover {
+                        color: $color-primary;
+                    }
+                }
+            }
+        }
+    }
+    .children{
+        padding: 10px;
+        @extend .clearfix;
+        :global{
+            .item{
+                width: 25%;
+                float: left;
+                padding: 10px;
+            }
+            .inner{
+                border-radius: 5px;
+                overflow: hidden;
+                position: relative;
+            }
+            .avatar{
+                display: block;
+                width: 100%;
+                height: 150px;
+                overflow: hidden;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat
+            }
+            .name{
+                background-color: #fff;
+                display: block;
+                padding: 10px;
+                font-weight: 700;
+                text-transform: uppercase;
+                color: $color-primary;
+                cursor: pointer;
+                a{
+                    color: inherit;
+                    &:hover{
+                        color: #031f31;
+                    }
+                }
+            }
+            .type{
+                position: absolute;
+                top: 10px;
+                left: 10px;
+            }
+        }
+    }
+}

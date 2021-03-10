@@ -1,0 +1,16 @@
+# dependencies
+/node_modules
+/bundles
+/.git
+/.vscode
+
+# misc
+.DS_Store
+.env
+env.*
+Dockerfile
+.gitignore
+README.md
+npm-debug.log
+/**/*.log
+/doc

@@ -1,0 +1,58 @@
+{
+    "parserOptions": {
+        "ecmaVersion": 2017,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "experimentalObjectRestSpread": true,
+            "experimentalDecorators": true
+        }
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "react-app",
+        "plugin:prettier/recommended",
+        "prettier/react"
+    ],
+    "rules": {
+        "semi": "warn",
+        "no-console": "warn",
+        "no-var": "warn",
+        "prefer-const": "warn",
+        "no-unused-labels": "warn",
+        "no-unused-vars": ["warn", { "args": "none" }],
+        "no-unused-expressions": "warn",
+        "max-params": ["warn", 4],
+        "max-lines": ["warn", { "max": 700, "skipBlankLines": true, "skipComments": true }],
+        "jsx-a11y/href-no-hash": "off",
+        "import/no-webpack-loader-syntax": "warn",
+        "react/prop-types": "warn",
+        "react/display-name": "off",
+        "react/no-unescaped-entities": "off",
+        "react/no-access-state-in-setstate": "off",
+        "react/no-did-mount-set-state": "warn",
+        "react/no-did-update-set-state": "warn",
+        "react/no-multi-comp": ["warn", { "ignoreStateless": true }],
+        "react/no-redundant-should-component-update": "warn",
+        "react/no-unused-prop-types": "off",
+        "react/no-unused-state": "off",
+        "react/no-deprecated": "off",
+        "react/no-find-dom-node": "off",
+        "react/boolean-prop-naming": "warn",
+        "react/no-will-update-set-state": "warn",
+        "prettier/prettier": "off"
+    },
+    "parser": "babel-eslint",
+    "plugins": ["react", "jsx-a11y", "prettier"],
+    "env": {
+        "browser": true,
+        "es6": true
+    },
+    "settings": {
+        "react": {
+            "pragma": "React",
+            "version": "16.3.2"
+        }
+    }
+}

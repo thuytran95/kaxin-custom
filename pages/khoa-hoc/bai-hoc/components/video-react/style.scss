@@ -1,0 +1,100 @@
+@import 'scss/helpers/variables';
+.controls {
+    span {
+        padding: 0 10px;
+        font-size: 16px;
+        line-height: 40px !important;
+        height: 40px;
+        width: 40px;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        &:first-child {
+            left: 0;
+        }
+        &:last-child {
+            left: 100px;
+        }
+        &.icon:hover {
+            cursor: pointer;
+            color: $color-primary;
+        }
+    }
+}
+.player {
+    height: calc(100% - 62px);
+    background: #000;
+    :global {
+        .video-react {
+            height: calc(100% - 55px) !important;
+            padding: 0 !important;
+        }
+        .video-react-volume-menu-button {
+            display: none;
+        }
+        .video-react .video-react-control-bar {
+            height: 40px;
+            background-color: #fff;
+            color: #000;
+            opacity: 1 !important;
+            visibility: visible !important;
+            bottom: -55px;
+        }
+        .video-react .video-react-time-control,
+        .video-react .video-react-time-divider,
+        .video-react-fullscreen-control,
+        .video-react-play-control {
+            font-size: 14px;
+            line-height: 40px;
+            &:hover {
+                color: $color-primary;
+            }
+        }
+        .video-react-play-control {
+            margin-right: 45px;
+            margin-left: 40px;
+            line-height: 40px;
+        }
+        .video-react .video-react-slider {
+            background-color: #000;
+        }
+        .video-react .video-react-play-progress {
+            background-color: #f76d1e;
+        }
+        .video-react-fullscreen.video-react .video-react-control-bar {
+            bottom: 0;
+            background-color: #fff;
+            padding-left: 0;
+        }
+        .video-react-fullscreen.video-react .video-react-play-control {
+            margin-right: 0;
+            margin-left: 0;
+        }
+        .video-react .video-react-big-play-button.video-react-big-play-button-center {
+            border-radius: 50%;
+            border: 0;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 40px;
+            background-color: rgba(255, 255, 255, 0.35);
+        }
+        .video-react-paused.video-react .video-react-big-play-button.big-play-button-hide {
+            display: block;
+        }
+    }
+}
+.textNote {
+    text-align: center;
+    color: $white;
+    padding: 30px 10px;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .player {
+        height: 500px;
+        max-height: 768px;
+    }
+}

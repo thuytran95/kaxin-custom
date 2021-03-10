@@ -1,0 +1,27 @@
+@import 'scss/helpers/variables';
+
+.pageWrapper{
+    text-align: center;
+    padding: 60px 0;
+    h3{
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 25px;
+    }
+    a{
+        width: 100%;
+        max-width: 200px;
+        padding: 0 15px !important;
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 12px !important;
+        line-height: 38px !important;
+        border-color: #0071bb !important;
+        background-color: transparent !important;
+        color: #0071bb !important;
+        &:hover{
+            background-color: #0071bb !important;
+            color: #fff !important;
+        }
+    }
+}

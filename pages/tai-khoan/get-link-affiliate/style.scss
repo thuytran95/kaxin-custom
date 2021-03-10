@@ -1,0 +1,434 @@
+@import 'scss/helpers/variables';
+.contentInner {
+    section {
+        margin: 0 0 20px;
+        padding: 20px;
+        border-radius: 4px;
+        border: solid 1px #d9d9d9;
+        font-size: 13px;
+    }
+    h3 {
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding: 0 0 20px;
+        margin: 0 0 20px;
+        border-bottom: 1px solid #d8d8d8;
+    }
+    .stTitle {
+        padding: 0 0 20px;
+        margin: 0 0 20px;
+        border-bottom: 1px solid #d8d8d8;
+        @extend .clearfix;
+        h3 {
+            padding: 0;
+            margin: 0;
+            border-bottom: 0;
+            float: left;
+            line-height: 26px;
+        }
+        h5 {
+            font-size: 14px;
+            line-height: 26px;
+            font-weight: bold;
+            float: right;
+            text-transform: uppercase;
+            color: #0071bb;
+            b {
+                color: #4a4a4a;
+                text-transform: none;
+                margin-left: 10px;
+                font-weight: 400;
+            }
+        }
+    }
+    table {
+        th,
+        td {
+            border: 0;
+            font-size: 13px;
+            vertical-align: middle;
+        }
+        th {
+            font-size: 12px;
+            font-weight: bold;
+            color: #9b9b9b;
+        }
+        b {
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        .courseName {
+            b {
+                display: block;
+                cursor: pointer;
+                overflow: hidden;
+                max-width: 250px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                &:hover {
+                    color: #0071bb;
+                }
+            }
+        }
+    }
+    form {
+        @extend .clearfix;
+        :global {
+            .form-group {
+                width: 25%;
+                float: left;
+                padding-right: 10px;
+                &:last-child {
+                    padding: 0;
+                }
+            }
+            .ant-select {
+                font-family: 'Montserrat', sans-serif !important;
+                font-size: 13px !important;
+                color: #616161;
+            }
+            .ant-select-selection {
+                border-radius: 3px;
+                border: 1px solid #d9d9d9;
+                padding: 0 0 2px;
+                font-size: 13px !important;
+                line-height: 34px;
+            }
+            .ant-select-selection--single,
+            .ant-select-selection__rendered {
+                line-height: 36px;
+            }
+            .ant-select-selection--multiple .ant-select-selection__placeholder {
+                top: 0;
+                margin: 0 0 0 5px;
+                line-height: 36px;
+                height: 36px;
+            }
+        }
+        label {
+            display: block;
+            height: 26px;
+            font-weight: bold;
+            color: $color-text;
+        }
+        input,
+        select {
+            height: 36px !important;
+        }
+        button {
+            border-radius: 5px;
+            margin-left: 5px;
+            background-color: $color-primary;
+            border-color: $color-primary;
+            padding: 0 10px;
+            font-size: 13px;
+            line-height: 34px;
+            font-weight: bold;
+            text-transform: uppercase;
+            min-width: 80px;
+            &:hover {
+                background-color: darken($color-primary, 15%);
+                border-color: darken($color-primary, 15%);
+            }
+            &.cancel {
+                background-color: #d9d9dd;
+                border-color: #d9d9dd;
+                &:hover {
+                    background-color: #000;
+                    border-color: #000;
+                }
+            }
+        }
+    }
+}
+.btnGetLink {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: $color-primary;
+    border-color: $color-primary;
+    padding: 0 10px;
+    font-size: 13px;
+    line-height: 34px;
+    min-width: 80px;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+    &:hover {
+        background-color: darken($color-primary, 15%);
+        border-color: darken($color-primary, 15%);
+    }
+}
+
+.popupWrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .popupContent {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        z-index: 2000;
+        border-radius: 4px;
+        text-align: center;
+        width: 100%;
+        max-width: 620px;
+        font-size: 13px;
+        line-height: 20px;
+        .close {
+            display: block;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.54);
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            z-index: 1000;
+            text-align: center;
+            line-height: 18px;
+            cursor: pointer;
+            font-weight: bold
+        }
+        section {
+            padding: 20px 30px;
+            &:first-child {
+                border-bottom: 1px solid #d8d8d8;
+            }
+        }
+        h3 {
+            font-size: 20px;
+            line-height: 28px;
+            font-weight: bold;
+            color: #8191a0;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+        h5 {
+            font-weight: bold;
+            color: #4a4a4a;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+        p {
+            margin-bottom: 7px;
+        }
+        .btnActions {
+            a,
+            span {
+                display: inline-block;
+                background-color: $color-primary;
+                border-color: $color-primary;
+                text-transform: uppercase;
+                font-weight: 700;
+                color: $white;
+                line-height: 40px;
+                padding: 0 20px;
+                margin: 0 5px;
+                border-radius: 4px;
+                &:hover {
+                    background-color: $color-four;
+                    border-color: $color-four;
+                }
+            }
+        }
+    }
+}
+.itemCourse {
+    display: flex;
+    .thumbnail,
+    .content,
+    .priceWrapper {
+        flex-grow: 1;
+        text-align: left;
+    }
+    .thumbnail {
+        max-width: 145px;
+        img,
+        span {
+            display: block;
+            width: 145px;
+            height: 120px;
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    }
+    .content {
+        padding: 0 20px;
+        h4 {
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 22px;
+            color: #4a4a4a;
+            text-transform: uppercase;
+        }
+        p {
+            font-size: 12px;
+            font-weight: 500;
+            font-style: italic;
+            color: #0071bb;
+        }
+    }
+    .priceWrapper {
+        max-width: 145px;
+        text-align: right;
+        .price {
+            font-size: 14px;
+            font-weight: bold;
+            color: #0071bb;
+            margin-bottom: 6px;
+        }
+        .text {
+            font-size: 12px;
+            b {
+                display: block;
+            }
+        }
+    }
+}
+.formLink {
+    :global {
+        .form-group {
+            display: flex;
+        }
+    }
+    label {
+        padding-right: 4px;
+        font-size: 13px;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: #4a4a4a;
+        line-height: 32px;
+    }
+    input {
+        padding: 0 10px;
+        line-height: 30px;
+        height: 32px !important;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+    button {
+        border-radius: 5px;
+        margin-left: 5px;
+        background-color: $color-primary;
+        border-color: $color-primary;
+        padding: 0 10px;
+        font-size: 13px;
+        line-height: 30px;
+        font-weight: bold;
+        text-transform: uppercase;
+        box-shadow: none !important;
+        height: 32px;
+        &:hover {
+            background-color: darken($color-primary, 15%);
+            border-color: darken($color-primary, 15%);
+        }
+    }
+    p {
+        color: #0071bb;
+    }
+}
+/* Responsive */
+@media screen and (max-width: 1200px) {
+    .contentInner {
+        form {
+            :global {
+                .form-group {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .contentInner {
+        table {
+            thead{
+                display: none;
+            }
+            tr:nth-child(2n+2){
+                background-color: #e5e5e5;
+                td{
+                    padding: 10px 15px;
+                }
+            }
+            td {
+                width: 100% !important;
+                display: block !important;
+                text-align: right!important;
+                padding: 10px 0;
+                border-bottom: 1px solid #d9d9d9;
+                float: left;
+                &:last-child{
+                    border-bottom: 0;
+                }
+                &::before{
+                    content: attr(data-title) ": ";
+                    font-weight: 700;
+                    float: left;
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 480px) {
+    .contentInner {
+        form {
+            :global {
+                .form-group {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .itemCourse {
+        flex-direction: column;
+        .thumbnail,
+        .content,
+        .priceWrapper {
+            max-width: 100%;
+            text-align: left;
+            padding: 0 0 15px;
+        }
+    }
+    .formLink {
+        :global {
+            .form-group {
+                flex-direction: column;
+            }
+        }
+        label, input, button{
+            margin: 0 0 10px;
+        }
+    }
+    .popupWrapper {
+        section{
+            padding: 15px;
+        }
+    }
+
+}

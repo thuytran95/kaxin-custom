@@ -1,0 +1,39 @@
+@import 'scss/helpers/variables';
+.tabHomeWrapper {
+    padding: 50px 0 20px;
+    :global {
+        .ant-tabs {
+            overflow: visible;
+        }
+        .ant-tabs-bar {
+            display: block;
+            border-bottom: 4px solid #d9d9d9;
+            text-align: center;
+        }
+        .ant-tabs-nav-container {
+            margin-bottom: -4px;
+        }
+        .ant-tabs-nav .ant-tabs-tab {
+            display: inline-block;
+            margin: 0 20px;
+            border: 0 !important;
+            padding: 0 0 15px;
+            position: relative;
+            font-size: 18px;
+            font-weight: bold;
+            color: #9b9b9b !important;
+            text-transform: uppercase;
+            cursor: pointer;
+            &:hover {
+                color: $color-primary !important;
+            }
+        }
+        .ant-tabs-nav .ant-tabs-tab-active {
+            color: $color-primary !important;
+        }
+        .ant-tabs-ink-bar {
+            height: 4px;
+            background-color: $color-primary;
+        }
+    }
+}

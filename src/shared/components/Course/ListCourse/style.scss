@@ -1,0 +1,49 @@
+@import 'scss/helpers/variables';
+.contentInner {
+    :global {
+        .row {
+            flex-direction: row !important;
+        }
+        .itemCourse {
+            .imgCourse {
+                min-height: 250px;
+            }
+            &:hover {
+                .inner {
+                    position: static;
+                    box-shadow: 0 0 10px 0 #dadada;
+                    z-index: 100;
+                }
+                .price {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                .rating {
+                    transform: translateY(-8px);
+                }
+            }
+            .price,
+            .rating {
+                transition: all 0.25s ease-in-out;
+            }
+            .addToCart {
+                position: absolute;
+                bottom: 15px;
+                left: 12px;
+                right: 15px;
+            }
+        }
+    }
+}
+.courseItems {
+    &:nth-child(3n + 1) {
+        clear: both;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .courseItems {
+        max-width: 100%;
+        flex: 100%;
+    }
+}

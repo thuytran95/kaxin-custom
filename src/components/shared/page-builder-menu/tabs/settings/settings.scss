@@ -1,0 +1,63 @@
+@import 'styles/colors';
+
+.content {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+}
+
+.actions {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    border-bottom: 1px solid $chromeBordersColor;
+    margin: 0;
+    display: flex;
+}
+
+.template,
+.subComponent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 30px;
+    border-bottom: 1px solid $chromeBordersColor;
+    text-align: center;
+    line-height: 30px;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+.template {
+    color: $linkColor;
+}
+
+.subComponent {
+    color: $chromeTextColor;
+}
+
+.action {
+    display: flex;
+    vertical-align: top;
+    text-align: center;
+    text-decoration: none;
+    margin: 0;
+    border: none;
+    outline: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    &:last-child {
+        border-right: 0;
+    }
+
+    &:hover {
+        color: $primary;
+    }
+}

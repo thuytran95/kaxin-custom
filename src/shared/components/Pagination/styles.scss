@@ -1,0 +1,80 @@
+@import 'scss/main';
+
+.wrapStyle {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    :global {
+        .ant-pagination{
+            .ant-pagination-item,
+            .ant-pagination-item-link {
+                margin-right: 8px;
+                &:hover {
+                    border-color: $color-third;
+                    background-color: $color-third;
+                    color: #FFF !important;
+                    a {
+                        color: #FFF !important;
+                    }
+                }
+            }
+            .ant-pagination-item-active {
+                background-color: $color-third;
+                color: #FFF;
+            }
+            .ant-pagination-jump-next, .ant-pagination-jump-prev, .ant-pagination-next, .ant-pagination-prev{
+                position: relative;
+            }
+            .ant-pagination-next .ant-pagination-item-link:after, .ant-pagination-prev .ant-pagination-item-link:after{
+                display: none;
+            }
+            .ant-pagination-next .ant-pagination-item-link, .ant-pagination-prev .ant-pagination-item-link{
+                .anticon{
+                    &:before, &:after{
+                        display: none;
+                    }
+                }
+                .anticon svg{
+                    display: inline-block !important;
+                }
+            }
+            .ant-pagination-jump-next .ant-pagination-item-container, .ant-pagination-jump-prev .ant-pagination-item-container{
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 10;
+                width: 100%;
+            }
+            .ant-pagination-jump-next:after, .ant-pagination-jump-prev:after{
+                    display: none;
+            }
+        }
+
+    }
+}
+@media screen and (max-width: 480px) {
+    .wrapStyle  {
+        :global{
+            .ant-pagination{
+                width: 100%;
+                overflow: hidden;
+                overflow-x: auto;
+                white-space: nowrap;
+                padding: 15px 0;
+                &::-webkit-scrollbar-track {
+                    background-color: #f3f3f3;
+                }
+
+                &::-webkit-scrollbar {
+                    height: 5px;
+                    background-color: #f3f3f3;
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    background-color: #333;
+                    border-radius: 2px;
+                }
+            }
+        }
+    }
+}

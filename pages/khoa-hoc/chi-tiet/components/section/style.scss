@@ -1,0 +1,421 @@
+@import 'scss/helpers/variables';
+
+/* Lesson */
+.boxLesson {
+    :global {
+        .ant-collapse {
+            margin-top: 20px;
+            border: 0;
+            background-color: transparent;
+        }
+        .ant-collapse-item {
+            margin: 0 0 10px;
+            border-bottom: 0;
+            background-color: #f5f5f5;
+            border: solid 1px $border-color;
+            border-radius: 4px;
+        }
+        .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+            padding: 14px 20px;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: bold;
+        }
+        .ant-collapse>.ant-collapse-item>.ant-collapse-header .anticon {
+            top: 50%;
+            right: 20px;
+            left: auto;
+            width: 16px;
+            height: 16px;
+            overflow: hidden;
+            text-indent: -9999px;
+            background-color: $color-text;
+            color: $white;
+            transform: translateY(-50%);
+            &:hover {
+                background-color: $color-four;
+            }
+            &::before, svg {
+                display: none;
+            }
+            &:after {
+                content: '\f278';
+                font-family: $material-font;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                font-size: 10px;
+                line-height: 16px;
+                text-indent: 0;
+            }
+        }
+        .ant-collapse > .ant-collapse-item.ant-collapse-item-active > .ant-collapse-header .anticon  {
+            &::after {
+                content: '\f273';
+            }
+        }
+        .ant-collapse-content {
+            padding: 0;
+        }
+        .ant-collapse-content > .ant-collapse-content-box {
+            padding: 0 20px;
+        }
+        .ant-collapse-content {
+            ul {
+                border-bottom: none;
+                margin: 0;
+                padding: 0;
+                li {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px 0;
+                    text-align: left;
+                    text-transform: none;
+                    font-weight: normal;
+                    font-size: 13px;
+                    list-style: none;
+                    position: relative;
+                    line-height: 24px;
+                    min-height: 50px;
+                    margin: 0 !important;
+                    &:not(:last-child) {
+                        border-bottom: 1px solid #d9d9d9 !important;
+                    }
+                    & > span {
+                        &.name {
+                            flex-grow: 1;
+                            color: $color-primary;
+                            cursor: pointer;
+                        }
+                        &.status {
+                            margin-right: 10px;
+                            font-size: 24px;
+                            &.learning {
+                                color: $color-primary;
+                            }
+                            &.learnt {
+                                color: #85d433;
+                            }
+                            &.notlearn {
+                                color: $gray;
+                            }
+                        }
+                        &.icon {
+                            margin: 0 10px;
+                            display: flex;
+                            justify-content: center;
+                            color: $color-text;
+                            cursor: pointer;
+                            &:after {
+                                content: '';
+                                display: inline-block;
+                                font-family: $material-font;
+                                font-size: 24px;
+                                line-height: 30px;
+                            }
+                            &.video {
+                                color: $color-four;
+                                &:after {
+                                    content: '\f3a9';
+                                }
+                            }
+                            &.pdf {
+                                &:after {
+                                    content: '\f14d';
+                                }
+                            }
+                            &.audio {
+                                color: $color-four;
+                                &:after {
+                                    content: '\f10f';
+                                }
+                            }
+                        }
+                        &.time {
+                            flex: 0 0 60px;
+                            text-align: center;
+                            color: #9b9b9b;
+                            font-size: 12px;
+                        }
+                        &.try-tag {
+                            margin-left: 10px;
+                            min-width: 80px;
+                            img {
+                                max-width: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Rating */
+
+.rateWrapper,
+.commentWrapper {
+    ul {
+        margin: 30px 0 0;
+        padding: 0;
+        li {
+            list-style: none;
+        }
+    }
+}
+
+.commentWrapper {
+    :global {
+        .ant-tabs,
+        .ant-tabs-nav-container {
+            font-size: 14px;
+            line-height: 20px;
+            color: #000;
+        }
+        .ant-tabs-nav-container {
+            margin-bottom: -3px;
+        }
+        .ant-tabs-bar {
+            border-bottom: 3px solid #e8e8e8;
+            margin: 0 0 30px;
+        }
+        .ant-tabs-nav {
+            display: block;
+            .ant-tabs-tab {
+                font-size: 14px;
+                font-weight: bold;
+                color: #8191a0;
+                text-transform: uppercase;
+                padding: 15px 0;
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+            .ant-tabs-tab-active {
+                color: $color-primary;
+            }
+        }
+        .ant-tabs-ink-bar {
+            height: 3px;
+            background-color: $color-primary;
+        }
+    }
+}
+
+.theAvt {
+    display: block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 2px solid #fff;
+    margin-right: 15px;
+    -webkit-box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+    box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+        0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+.itemWrapper {
+    position: relative;
+    margin: 0 0 35px !important;
+    padding: 0;
+    padding-left: 50px;
+    .theAvt {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    h4 {
+        font-size: 14px;
+        font-weight: bold;
+        color: $color-primary;
+        margin-bottom: 10px;
+    }
+    h6 {
+        display: block;
+        font-size: 12px;
+        font-weight: 500;
+        font-style: italic;
+        color: #9b9b9b;
+        margin-bottom: 15px;
+    }
+    p {
+        font-size: 13px;
+        line-height: 20px;
+        margin: 0 0 10px !important;
+    }
+    .reply {
+        cursor: pointer;
+        font-size: 13px;
+        color: $color-primary;
+    }
+    :global {
+        .rating {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}
+
+.boxTotal {
+    margin-top: 20px;
+    text-align: center;
+    @extend .clearfix;
+    h3 {
+        font-size: 72px;
+        line-height: 80px;
+        font-weight: bold;
+        color: #8191a0;
+    }
+    em {
+        font-size: 13px;
+        font-weight: normal;
+        font-style: normal;
+        color: #031f31;
+    }
+    :global {
+        .rating {
+            margin: 0 auto 10px;
+            width: 135px;
+            height: 26px;
+            line-height: 26px;
+            color: #eb9f4d;
+            font-size: 26px;
+        }
+        .star {
+            height: 26px;
+            line-height: 26px;
+        }
+    }
+}
+
+.boxTotalProcess {
+    margin-top: 20px;
+    @extend .clearfix;
+    ul {
+        margin: 0;
+        padding: 0;
+        float: right;
+        li {
+            margin-bottom: 5px !important;
+            @extend .clearfix;
+        }
+    }
+    span {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 10px;
+    }
+    :global {
+        .label-star {
+            width: 85px;
+            text-align: right;
+            color: $color-four;
+            letter-spacing: 3px;
+        }
+        .process {
+            width: 200px;
+            height: 3px;
+            background-color: #d8d8d8;
+            position: relative;
+            i {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 3px;
+                background-color: $color-primary;
+            }
+        }
+    }
+}
+
+.formRate,
+.formComment {
+    form {
+        color: #8191a0;
+        @extend .clearfix;
+        label {
+            display: block;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        span {
+            font-size: 12px;
+            font-style: italic;
+        }
+        button {
+            float: right;
+            margin-top: -15px;
+        }
+        :global {
+            .form-group {
+                margin: 0;
+            }
+            .btn {
+                background-color: $color-primary;
+                border-color: $color-primary;
+                outline: none;
+                &:hover {
+                    background-color: darken($color-primary, 15%);
+                    border-color: darken($color-primary, 15%);
+                }
+            }
+            .ant-rate {
+                display: block;
+                margin: 0 0 15px;
+                li {
+                    margin: 0 !important;
+                    margin-right: 3px !important;
+                }
+            }
+            .ant-rate {
+                color: $color-four;
+            }
+            .anticon {
+                font-size: 26px;
+            }
+            .anticon:before {
+                font-family: $material-font !important;
+            }
+            .anticon-star:before {
+                content: '\f27c';
+            }
+            .ant-rate-star-focused,
+            .ant-rate-star-full {
+                .anticon-star:before {
+                    content: '\f27d';
+                }
+            }
+        }
+    }
+}
+
+.formComment,
+.replyForm {
+    form {
+        padding-left: 50px;
+        position: relative;
+        .theAvt {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        button {
+            margin-top: 15px;
+        }
+    }
+}
+
+.replyForm {
+    margin-top: 15px;
+    input {
+        padding: 10px;
+    }
+}

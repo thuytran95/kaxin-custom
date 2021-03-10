@@ -1,0 +1,18 @@
+@import 'scss/helpers/variables';
+.themeWrapper{
+    padding: 50px 0;
+    background-image: url('/static/assets/images/bg/bg.png');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    :global{
+        .titleHome{
+            color: $white;
+        }
+    }
+    @media only screen and (max-width: 768px){
+        background-image: none;
+        background-color: #783986
+    }
+}

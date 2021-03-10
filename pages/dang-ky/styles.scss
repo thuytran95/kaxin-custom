@@ -1,0 +1,170 @@
+@import 'scss/helpers/variables';
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+    img {
+        display: inline-block;
+        max-width: 165px;
+    }
+}
+
+.boxLayout {
+    max-width: 555px;
+    margin: 0 auto;
+    background-color: $white;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 20px;
+    padding-top: 20px;
+    h2,
+    h3 {
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        margin: 0 0 15px;
+    }
+    h2 {
+        font-size: 24px;
+        color: $color-primary;
+        margin: 0 0 20px;
+    }
+    a {
+        color: $color-primary;
+        font-weight: bold;
+        &:hover {
+            color: $color-four;
+        }
+    }
+}
+
+.sectionOne,
+.sectionTwo,
+.sectionThree {
+    padding: 20px;
+    border-bottom: 1px solid $border-color;
+}
+.sectionThree{
+    border:0;
+}
+
+.sectionOne {
+    form {
+        section{
+            @extend .clearfix;
+        }
+        :global {
+            section .form-group {
+                width: 48.5%;
+                float: right;
+                &:nth-child(2n+1) {
+                    float: left;
+                }
+            }
+            .form-check {
+                margin-top: 20px;
+                padding-left: 2rem;
+            }
+            .form-check-label {
+                input {
+                    margin-left: -2rem;
+                }
+            }
+            .btn {
+                background-color: $color-primary;
+                border-color: $color-primary;
+                text-transform: uppercase;
+                font-weight: 700;
+                &:hover {
+                    background-color: $color-four;
+                    border-color: $color-four;
+                }
+            }
+        }
+        .textRight {
+            text-align: right;
+        }
+        label {
+            color: $color-text;
+        }
+        button {
+            margin-top: 20px;
+        }
+    }
+}
+
+.sectionTwo {
+    @extend .clearfix;
+    a {
+
+        display: block;
+        width: 48.5%;
+        float: left;
+        padding: 0 10px;
+        text-align: center;
+        font-weight: normal;
+        background-color: $color-primary;
+        border-color: $color-primary;
+        color: $white !important;
+        line-height: 40px;
+        border-radius: 4px;
+        transition: all 0.4s ease-in-out;
+        i{
+            font-size: 24px;
+            line-height: 40px;
+            margin-right: 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        &:hover {
+            background-color: darken($color-primary, 15%);
+            border-color: darken($color-primary, 15%);
+        }
+        &:last-child {
+            float: right;
+            background-color: #d6573a;
+            border-color: #d6573a;
+            &:hover {
+                background-color: darken(#d6573a, 15%);
+                border-color: darken(#d6573a, 15%);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px){
+    .logo{
+        padding: 0 15px;
+        text-align: left;
+        margin: 0 0 25px;
+    }
+    .boxLayout {
+        max-width: 100%;
+        border: 0;
+        padding: 0 15px;
+    }
+    .sectionOne,
+    .sectionTwo,
+    .sectionThree {
+        padding: 20px 0;
+    }
+    .sectionTwo {
+        a{
+            width: 100%;
+            margin-bottom: 10px;
+        }
+    }
+}
+
+@media screen and (max-width:360px){
+    .sectionOne {
+        form {
+            :global {
+                section .form-group {
+                    width: 100%;
+                    text-align: left;
+                }
+            }
+        }
+    }
+}

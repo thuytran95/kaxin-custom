@@ -1,0 +1,141 @@
+@import 'scss/main';
+.pageActive {
+    background-color: #f5f5f5;
+    padding: 50px 0;
+    h1 {
+        text-transform: uppercase;
+        font-size: 24px;
+        font-weight: bold;
+        color: $color-primary;
+        margin-bottom: 40px;
+    }
+    h3 {
+        font-size: 18px;
+        font-weight: bold;
+        text-transform: uppercase;
+        margin: 0 0 10px;
+    }
+    form {
+        max-width: 565px;
+        @extend .clearfix;
+        :global {
+            .form-group {
+                &::before,
+                &:after {
+                    content: '';
+                    display: table;
+                }
+                &:after {
+                    clear: both;
+                }
+            }
+        }
+        button {
+            float: right;
+            width: 100%;
+            max-width: 110px;
+            background-color: $color-primary;
+            border-color: $color-primary;
+            font-weight: bold;
+            &:hover {
+                background-color: $color-four;
+                border-color: $color-four;
+            }
+        }
+        input {
+            float: left;
+            width: calc(100% - 120px);
+        }
+        small {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    }
+}
+
+.note {
+    margin-top: 60px;
+    font-size: 13px;
+    ul {
+        li {
+            list-style: none;
+            font-style: italic;
+            padding-left: 10px;
+            &::before {
+                content: '\f26d';
+                font-family: $material-font;
+                font-style: normal;
+                font-size: 6px;
+                vertical-align: middle;
+                display: inline-block;
+                margin-right: 10px;
+            }
+            b,
+            strong {
+                color: $color-primary;
+            }
+        }
+    }
+}
+:global {
+    .swal2-container .swal2-popup .swal2-title {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        color: #8191a0;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+    .swal2-container .swal2-popup .swal2-content {
+        font-size: 13px;
+        line-height: 20px;
+        color: #4a4a4a;
+        margin-bottom: 20px;
+    }
+    .swal2-container .swal2-popup {
+        padding: 40px;
+        width: 100%;
+        max-width: 350px;
+    }
+    .swal2-container .swal2-popup .swal2-actions {
+        flex-direction: row-reverse;
+    }
+    .swal2-container .swal2-popup .swal2-styled {
+        margin: 0 5px;
+        font-size: 14px !important;
+        font-weight: bold;
+        text-transform: uppercase;
+        box-shadow: none !important;
+        border: 1px solid #0071bb !important;
+    }
+    .swal2-container .swal2-popup .swal2-styled.swal2-confirm {
+        box-shadow: none !important;
+        background-color: #0071bb;
+        &:hover {
+            border-color: #000;
+            background-color: #000;
+        }
+    }
+    .swal2-container .swal2-popup .swal2-styled.swal2-cancel {
+        background-color: transparent;
+        color: #0071bb;
+        &:hover {
+            color: #ffff;
+            background-color: #0071bb;
+        }
+    }
+}
+@media screen and (max-width: 320px) {
+    .pageActive {
+        form {
+            button {
+                float: none;
+            }
+            input {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

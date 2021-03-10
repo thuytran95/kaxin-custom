@@ -1,0 +1,33 @@
+@import 'scss/helpers/variables';
+.commentWrapper{
+    padding: 50px 0;
+    :global{
+        .slick-list{
+            padding:50px 0;
+        }
+        .itemCourse{
+            min-height: 450px;
+            &:hover .inner{
+                top: -20px;
+                bottom: -20px;
+            }
+            .imgCourse{
+                height: 250px;
+            }
+            .infoCourse {
+                min-height: 150px;
+            }
+            .addToCart .btn{
+                &.disabled, &.disabled:hover {
+                    background-color: $gray;
+                    border-color: $gray;
+                }
+            }
+        }
+        .itemCourse .price{
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+    }
+}

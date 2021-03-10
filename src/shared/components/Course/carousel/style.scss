@@ -1,0 +1,45 @@
+@import 'scss/helpers/variables';
+.carouselWrapper {
+    :global {
+        .itemCourse {
+            max-width: 300px;
+            .infoCourse {
+                max-height: 200px;
+                overflow: hidden;
+            }
+            .imgCourse {
+                height: 200px;
+            }
+            &:hover {
+                .infoCourse {
+                    max-height: none;
+                    overflow: visible;
+                }
+            }
+        }
+        .slick-next,
+        .slick-prev {
+            z-index: 100;
+        }
+        .slick-next {
+            left: auto;
+            right: -40px;
+        }
+        .slick-prev {
+            left: -40px;
+            right: auto;
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .carouselWrapper {
+        :global {
+            .slick-next {
+                right: 20px;
+            }
+            .slick-prev {
+                left: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.wrapDrop {
+    position: relative;
+    width: 80px;
+    margin: 0 auto 15px;
+}
+
+.uploadBox {
+    width: 100%;
+    height: 80px;
+    border: solid 2px #e7f2f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hasImage {
+    height: auto !important;
+    border: none !important;
+}
+
+.removeButton {
+    width: 100%;
+    border: none;
+    color: #fff;
+    background: #dc3545;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}

@@ -1,0 +1,22 @@
+@import 'scss/helpers/variables';
+.pageCartWrapper {
+    padding: 30px 0;
+    h1 {
+        font-size: 24px;
+        font-weight: bold;
+        color: $color-primary;
+        margin-bottom: 25px;
+    }
+}
+
+@media screen and (min-width:601px) and (max-width:1024px) {
+    .pageCartWrapper {
+        :global {
+            .table-cart,
+            .total-cart {
+                flex: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+}

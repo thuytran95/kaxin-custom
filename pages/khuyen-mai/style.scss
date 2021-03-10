@@ -1,0 +1,102 @@
+@import 'scss/main';
+.headerTitlePage {
+    padding: 30px 0;
+    background-image: url('/static/assets/images/km/bgKM.png');
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: $white;
+    text-align: center;
+    .inner{
+        padding:20% 8% 15%;
+    }
+    h3 {
+        display: block;
+        font-size: 72px;
+        line-height: 75px;
+        font-weight: 900;
+        color: #0071bb;
+        text-transform: uppercase;
+        padding: 15px 10px 0px;
+        background-color: $white;
+    }
+    .text{
+        @extend .clearfix;
+        margin-bottom: 10px;
+        span{
+            font-size: 30px;
+            line-height: 30px;
+            font-weight: 900;
+            float: left;
+            text-transform: uppercase;
+            &:last-child{
+                float: right;
+            }
+        }
+    }
+    p{
+        font-size: 144px;
+        line-height: 160px;
+        font-weight: 900;
+        text-align:right;
+    }
+}
+
+.mainContainer{
+    .boxTitle{
+        padding: 50px 0 40px;
+        text-align: center;
+        margin: 0;
+        font-size: 24px;
+        font-weight: bold;
+        color: #0071bb;
+        text-transform: uppercase;
+    }
+    :global {
+        .row{
+            flex-direction: row-reverse !important;
+        }
+        .itemCourse{
+            .imgCourse {
+                min-height: 190px;
+            }
+            .infoCourse{
+                min-height: 175px;
+            }
+            &:hover {
+                .inner {
+                    position: static;
+                    box-shadow: 0 0 10px 0 #dadada;
+                    z-index: 100;
+                }
+                .price {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                .rating {
+                    transform: translateY(-8px);
+                }
+            }
+            .price,
+            .rating {
+                transition: all 0.25s ease-in-out;
+            }
+            .addToCart {
+                position: absolute;
+                bottom: 15px;
+                left: 12px;
+                right: 15px;
+            }
+        }
+    }
+    .innerContent{
+        :global{
+            .row{
+                flex-direction: row !important;
+            }
+        }
+    }
+}
+.contentWrapper{
+    padding-bottom: 40px;
+}

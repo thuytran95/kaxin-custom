@@ -1,0 +1,178 @@
+@import 'scss/helpers/variables';
+
+/* Lesson */
+
+.boxLesson {
+    :global {
+        .ant-collapse {
+            margin-top: 20px;
+            border: 0;
+            background-color: transparent;
+        }
+        .ant-collapse-item {
+            margin: 0 0 10px;
+            border-bottom: 0;
+            background-color: #f5f5f5;
+            border: solid 1px $border-color;
+            border-radius: 4px;
+        }
+        .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+            padding: 14px 20px;
+            font-size: 14px;
+            line-height: 22px;
+            font-weight: bold;
+            a {
+                color: inherit;
+                &:hover{
+                    color: $color-primary;
+                }
+            }
+        }
+        .ant-collapse > .ant-collapse-item > .ant-collapse-header .anticon {
+            top: 50%;
+            right: 10px;
+            left: auto;
+            width: 16px;
+            height: 16px;
+            overflow: hidden;
+            text-indent: -9999px;
+            background-color: $color-text;
+            color: $white;
+            transform: translateY(-50%);
+            &:hover {
+                background-color: $color-four;
+            }
+            &::before,
+            svg {
+                display: none;
+            }
+            &:after {
+                content: '\f278';
+                font-family: $material-font;
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                font-size: 10px;
+                line-height: 16px;
+                text-indent: 0;
+            }
+        }
+        .ant-collapse > .ant-collapse-item.ant-collapse-item-active > .ant-collapse-header .anticon {
+            &::after {
+                content: '\f273';
+            }
+        }
+        .ant-collapse-content {
+            padding: 0;
+        }
+        .ant-collapse-content > .ant-collapse-content-box {
+            padding: 0 20px;
+        }
+        .ant-collapse-content {
+            ul {
+                border-bottom: none;
+                margin: 0;
+                padding: 0;
+                li {
+                    display: flex;
+                    align-items: center;
+                    padding: 10px 0;
+                    text-align: left;
+                    text-transform: none;
+                    font-weight: normal;
+                    font-size: 13px;
+                    list-style: none;
+                    position: relative;
+                    line-height: 24px;
+                    min-height: 50px;
+                    margin: 0 !important;
+                    &:not(:last-child) {
+                        border-bottom: 1px solid #d9d9d9 !important;
+                    }
+                    & > span {
+                        &.name {
+                            flex-grow: 1;
+                            color: $color-primary;
+                        }
+                        &.status {
+                            margin-right: 10px;
+                            font-size: 24px;
+                            &.learning {
+                                color: $color-primary;
+                            }
+                            &.learnt {
+                                color: #85d433;
+                            }
+                            &.notlearn {
+                                color: $gray;
+                            }
+                        }
+                        &.icon {
+                            margin: 0 10px;
+                            display: flex;
+                            justify-content: center;
+                            color: $color-text;
+                            cursor: pointer;
+                            &:after {
+                                content: '';
+                                display: inline-block;
+                                font-family: $material-font;
+                                font-size: 24px;
+                                line-height: 30px;
+                            }
+                            &.video {
+                                color: $color-four;
+                                &:after {
+                                    content: '\f3a9';
+                                }
+                            }
+                            &.ebook {
+                                &:after {
+                                    content: '\f14d';
+                                }
+                            }
+                            &.audio {
+                                color: $color-four;
+                                &:after {
+                                    content: '\f10f';
+                                }
+                            }
+                        }
+                        &.time {
+                            flex: 0 0 60px;
+                            text-align: center;
+                            color: #9b9b9b;
+                            font-size: 12px;
+                        }
+                        &.try-tag {
+                            margin-left: 10px;
+                            img {
+                                max-width: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.lessonPost {
+    span {
+        display: block;
+        width: 25%;
+        float: left;
+        padding: 0 10px;
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+    :global {
+        .lecuter {
+            color: #0071bb;
+        }
+    }
+}
